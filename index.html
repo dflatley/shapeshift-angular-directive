@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AngularJS ShapeShift.js Directive</title>
+
+<link href="app/css/jquery-ui-1.9.2.custom.css" rel="stylesheet" type="text/css" />
+
+<script src="app/js/jquery-1.10.2.min.js"></script>
+<script src="app/js/jquery-ui-1.9.2.custom.js"></script>
+<script src="app/js/angular.min.js"></script>
+<script src="app/js/jquery.shapeshift.js"></script>
+
+<script src="app/app.js"></script>
+<script src="app/controllers/controllers.js"></script>
+
+<style>
+	.container {
+		border: 1px dashed #ccc;
+		position: relative;
+	}
+	
+	.container > div {
+		background: #CCC;
+		height: 100px;
+		position: absolute;
+		width: 80px;
+	}
+	
+	.container > div[data-ss-colspan='2'] { width: 170px; }
+	
+	.container .ss-placeholder-child {
+		background: transparent;
+		border: 1px dashed red;
+	}
+</style>
+
+</head>
+
+<body ng-app="shapeshiftapp" ng-controller="FrontCtrl">
+
+	<h1>AngularJS Directive for a ShapeShift.js plugin</h1>
+
+	<div class="container" shapeshift >
+        <div></div>
+        <div></div>
+        <div data-ss-colspan='2'></div>
+        <div></div>
+    </div>
+
+</body>
+</html>
